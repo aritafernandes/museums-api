@@ -8,8 +8,9 @@ class MuseumsController < ApplicationController
     # API key is retrieved from the environment variable named MAPBOX_API_KEY.
     # Authentication and access to the Mapbox API.
     api_key = ENV['MAPBOX_API_KEY']
+    proximity = '-73.990593,40.740121'  # Default coordinates
     # Constructs a URL using the URI class, specifying the API endpoint for retrieving museum data.
-    url = URI("https://api.mapbox.com/geocoding/v5/mapbox.places/museum.json?proximity=-73.990593%2C40.740121&access_token=#{api_key}")
+    url = URI("https://api.mapbox.com/geocoding/v5/mapbox.places/museum.json?proximity=#{proximity}&access_token=#{api_key}")
     # Sends an HTTP GET request to the constructed URL and retrieves the response.
     # Retrieves the JSON response from the API.
     response = Net::HTTP.get(url)
