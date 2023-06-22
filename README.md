@@ -1,24 +1,6 @@
-# README
+# Museum and Postal Code Retrieval using Mapbox Geocoding API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository provides a simple exercise demonstrating how to retrieve key-value pairs of museums and postal codes using the Mapbox Geocoding API with Ruby on Rails.
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<img width="617" alt="Screenshot 2023-06-22 at 14 21 18" src="https://github.com/aritafernandes/museums-api/assets/127790464/0bb9045d-9216-406d-888c-aee40f010320">
