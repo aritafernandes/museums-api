@@ -20,7 +20,7 @@ class MuseumsController < ApplicationController
       next if context.empty?
       postal_code = context[1]['text']
       hash[postal_code] ||= []
-      hash[postal_code] << { 'name' => feature['text'] }
+      hash[postal_code] << feature['text']
     end
     render json: @museums
   end
