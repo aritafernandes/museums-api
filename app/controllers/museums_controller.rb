@@ -4,14 +4,11 @@ require 'net/http'
 class MuseumsController < ApplicationController
   def index
     api_key = ENV['MAPBOX_API_KEY']
-    proximity = '-73.990593,40.740121'
+    long = params["long"]
+    lat = params["lat"]
+    proximity = "#{long}%2C#{lat}"
 
-    coordinates_url = URI("https://api.mapbox.com/geocoding/v5/mapbox.places/museum.json?proximity=#{proximity}&access_token=#{api_key}")
-    coordinates_response = Net::HTTP.get(coordinates_url)
-    coordinates_json = JSON.parse(coordinates_response)
-    coordinates = coordinates_json['features'][0]['center']
-
-    url = URI("https://api.mapbox.com/geocoding/v5/mapbox.places/museum.json?proximity=#{coordinates.join(',')}&access_token=#{api_key}")
+    url = URI("https://api.mapbox.com/geocoding/v5/mapbox.places/museum.json?proximity=#{proximity}&access_token=#{api_key}")
     response = Net::HTTP.get(url)
     json = JSON.parse(response)
     museums = json['features']
